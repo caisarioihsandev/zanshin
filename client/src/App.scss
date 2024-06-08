@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  height: 100vh;
+
+  .App {
+    font-family: sans-serif;
+    text-align: center;
+
+    .leaflet-container {
+      height: 100vh;
+    }
+  }
+}
