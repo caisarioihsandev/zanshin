@@ -1,10 +1,11 @@
 import './App.scss';
 import 'leaflet/dist/leaflet.css';
 
-import { MapContainer, TileLayer, Marker } from "react-leaflet";
-import { Icon } from "leaflet";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { Icon, divIcon } from "leaflet";
+import MarkerClusterGroup from "react-leaflet-cluster";
 
-import locator from './img/gps.png';
+import locator from './img/location-pin.png';
 
 const App = () => {
 
@@ -28,7 +29,15 @@ const App = () => {
     iconUrl: locator,
     iconSize: [38, 38] // size of the icon
 
-  })
+  });
+
+  const createCustomClusterIcon = (cluster) => {
+    return new divIcon({
+      html: `<div class="cluster-icon">${cluster.getChildCount()}</div>`,
+      className: "custom-marker-cluster",
+      // iconSize: point(33, 33, true),
+    });
+  }
 
   return (
     <div className="App">
@@ -38,9 +47,22 @@ const App = () => {
           url='https://tile.openstreetmap.org/{z}/{x}/{y}.png'
         />
 
-        {markers.map(marker => (
-          <Marker position={marker.geocode} icon={customIcon}></Marker>
-        ))}
+        {/* <TileLayer
+          attribution='Stamen Watercolor'
+          url='https://tiles.stadiamaps.com/tiles/stamen_watercolor/{z}/{x}/{y}.jpg'
+        /> */}
+
+        <MarkerClusterGroup
+          chunkedLoading
+          iconCreateFunction={createCustomClusterIcon}
+        >
+          {markers.map(marker => (
+            <Marker position={marker.geocode} icon={customIcon}>
+              <Popup><h2>{marker.popUp}</h2></Popup>
+            </Marker>
+          ))}
+        </MarkerClusterGroup>
+
       </MapContainer>    
     </div>
   );
