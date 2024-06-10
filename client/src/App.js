@@ -1,6 +1,9 @@
 import './App.scss';
 import 'leaflet/dist/leaflet.css';
 
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { Icon, divIcon } from "leaflet";
 import MarkerClusterGroup from "react-leaflet-cluster";
@@ -9,17 +12,42 @@ import locator from './img/location-pin.png';
 
 const App = () => {
 
+  const [data, setData] = useState();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `https://api.mapbox.com/geocoding/v5/mapbox.places/Jakarta.json?access_token=pk.eyJ1IjoiY2Fpc2FyaW8iLCJhIjoiY2x4OG02enA3Mm0wZjJpczl0bm1hMGF6aiJ9.5Qy_slgirqy66gnGaDmevg`
+        );
+        setData(response.data);
+      } catch (err) {
+        console.error('Error fetching data: ', err);
+      }
+    };
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    if (data && data.features && data.features[0] && data.features[0].geometry) {
+      console.log(data.features[0].geometry.coordinates);
+    }
+  }, [data]);
+
   // markers
   const markers = [
     {
+      id: 1,
       geocode: [-6.19999, 106.80],
       popUp: "Hello, I am pop up 1"
     },
     {
+      id: 2,
       geocode: [-6.2112, 106.82],
       popUp: "Hello, I am pop up 2"
     },
     {
+      id: 3,
       geocode: [-6.215, 106.799],
       popUp: "Hello, I am pop up 3"
     }
@@ -57,7 +85,7 @@ const App = () => {
           iconCreateFunction={createCustomClusterIcon}
         >
           {markers.map(marker => (
-            <Marker position={marker.geocode} icon={customIcon}>
+            <Marker key={marker.id} position={marker.geocode} icon={customIcon}>
               <Popup><h2>{marker.popUp}</h2></Popup>
             </Marker>
           ))}
