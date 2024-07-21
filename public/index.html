@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Zanshin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+
+    <!-- Autocomplete JQuery -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+  
+
+    <link rel="stylesheet" href="css/pagestyle.css">
+    <link rel="stylesheet" href="css/map.css">
+  </head>
+
+  <body>
+    <header>
+        <h1 class="">Zanshin | Dojo-Finder</h1>
+    </header>
+
+    <div class="container contain-wrapper">
+      <!-- penjelasan / company profile -->
+
+      <section class="company-profile">
+        <p>
+          Zanshin adalah platform revolusioner yang diciptakan untuk memudahkan siapa saja yang ingin menemukan dojo karate terdekat. Dalam dunia yang semakin sibuk, kami memahami betapa pentingnya memiliki akses cepat dan mudah ke tempat latihan yang sesuai dengan kebutuhan dan lokasi Anda. Dengan Zanshin, pencarian dojo karate menjadi lebih efisien dan menyenangkan, memungkinkan Anda untuk fokus pada tujuan utama Anda—mengasah keterampilan dan seni bela diri Anda.
+        </p>
+
+        <p>
+          Platform kami dirancang dengan teknologi canggih dan user-friendly, memastikan setiap pengguna dapat dengan mudah menjelajahi berbagai pilihan dojo karate yang tersedia. Zanshin tidak hanya menampilkan dojo yang terdekat, tetapi juga menyediakan informasi rinci tentang setiap dojo, termasuk jadwal kelas, instruktur, fasilitas, dan ulasan dari pengguna lain. Dengan demikian, Anda dapat membuat keputusan yang tepat berdasarkan preferensi dan kebutuhan pribadi Anda.
+        </p>
+          
+        <p>
+          Komitmen kami adalah membantu komunitas karate berkembang dengan menyediakan akses yang lebih luas dan informasi yang lebih lengkap kepada para penggemarnya. Kami percaya bahwa dengan menyatukan dojo-dojo karate di satu platform, Zanshin dapat berkontribusi dalam memajukan seni bela diri ini, serta menginspirasi lebih banyak orang untuk memulai atau melanjutkan perjalanan mereka dalam dunia karate.
+        </p>
+
+        <p>
+          Zanshin hadir sebagai solusi bagi para pecinta karate, baik pemula maupun yang sudah berpengalaman, untuk menemukan dojo yang sempurna. Dengan dedikasi kami terhadap kualitas dan kemudahan penggunaan, kami berharap dapat menjadi mitra terpercaya dalam perjalanan bela diri Anda. Selamat datang di Zanshin, langkah pertama Anda menuju pengalaman karate yang lebih baik.
+        </p>
+      </section>
+
+      <br/>
+
+      <!-- input pencarian dojo -->
+      <section class="search-dojo">
+        <div class="label">Silahkan masukkan lokasi Anda</div>
+        <div class="input-group">
+          <input type="text" id="dojo-tag" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+          <span class="input-group-text search-btn">search</span>
+        </div>
+        <p>Tekan Enter setelah mengetik/memilih</p>
+      </section>
+
+      <!-- map -->
+      <section id="map"></section>
+
+      <!-- list dojo hasil pencarian -->
+      <section id="list-dojo" class="row"></section>
+    </div>
+    
+
+    <!-- footer -->
+     <footer></footer>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <!-- Popper: for dropdowns, popovers, or tooltips -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    
+    <!-- Leaflet JS setelah sebelumnya Leaflet's CSS dipasang pada header -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+
+    <!-- Autocomplete -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+
+    <!-- pengaturan autocomplete, map, data yang ditampilkan -->
+    <script src="js/main.js"></script>
+
+  </body>
+</html>

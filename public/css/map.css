@@ -1,0 +1,6 @@
+#map { 
+    height: 350px;
+    border-radius: 20px;
+    align-items: center;
+    z-index: -50;
+}

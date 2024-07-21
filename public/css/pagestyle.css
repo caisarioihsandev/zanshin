@@ -1,0 +1,29 @@
+:root {
+    --maxWidth : max-width;
+}
+
+header {
+    align-items: center;
+    text-align: center;
+    margin: 20px;
+}
+
+.contain-wrapper {
+    padding-top: 20px;
+}   
+
+section {
+    margin: 20px;
+}
+
+section.search-dojo {
+    z-index: 70;
+}
+
+section#list-dojo {
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(var(--maxWidth) - 20px);
+    display: none;
+}

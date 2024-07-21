@@ -1,0 +1,38 @@
+{
+    "dojo" : [
+        {
+            "nama": "UKM Karate IPB A",
+            "perguruan": "INKAI",
+            "alamat": "IPB Dramaga",
+            "koordinat": [-6.556731, 106.725945]
+        },
+        
+        {
+            "nama": "UKM Karate IPB B",
+            "perguruan": "INKAI",
+            "alamat": "IPB Beranangsiang",
+            "koordinat": [-6.600243, 106.806734]
+        },
+    
+        {
+            "nama": "UKM Karate Pakuan",
+            "perguruan": "INKAI",
+            "alamat": "Universitas Pakuan",
+            "koordinat": [-6.599196, 106.812435]
+        },
+    
+        {
+            "nama": "UKM Karate Cilandak",
+            "perguruan": "INKAI",
+            "alamat": "Kompleks Marinir Cilandak",
+            "koordinat": [-6.305031, 106.811410]
+        },
+    
+        {
+            "nama": "UKM Karate Rawamangun",
+            "perguruan": "INKAI",
+            "alamat": "Rawamangun",
+            "koordinat": [-6.187548, 106.875292]
+        }
+    ]
+}
